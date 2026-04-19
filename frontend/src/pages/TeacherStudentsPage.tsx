@@ -32,7 +32,6 @@ export function TeacherStudentsPage() {
   useEffect(() => {
     async function loadRoster() {
       if (!courseId) {
-        setError('Missing courseId in URL');
         setLoading(false);
         return;
       }
@@ -58,6 +57,21 @@ export function TeacherStudentsPage() {
     const q = query.toLowerCase();
     return roster.filter((student) => student.fullName.toLowerCase().includes(q) || student.email.toLowerCase().includes(q));
   }, [data?.roster, query]);
+
+  if (!courseId) {
+    return (
+      <PortalLayout role="TEACHER" title="Students">
+        <div className="flex flex-col items-center justify-center py-20 text-center">
+          <span className="material-symbols-outlined mb-4 text-5xl text-[var(--outline-soft)]">groups</span>
+          <h2 className="mb-2 text-2xl font-bold">Select a Course</h2>
+          <p className="mb-6 text-[var(--on-surface-variant)]">Please select a course from your courses list to view the student roster.</p>
+          <Link to="/teacher/courses" className="ec-primary-btn inline-flex items-center gap-2">
+            View My Courses
+          </Link>
+        </div>
+      </PortalLayout>
+    );
+  }
 
   return (
     <PortalLayout role="TEACHER" title="Students">

@@ -32,7 +32,6 @@ export function TeacherAttendancePage() {
   useEffect(() => {
     async function loadRoster() {
       if (!courseId) {
-        setError('Missing courseId in URL');
         setLoading(false);
         return;
       }
@@ -81,6 +80,21 @@ export function TeacherAttendancePage() {
     } finally {
       setSaving(false);
     }
+  }
+
+  if (!courseId) {
+    return (
+      <PortalLayout role="TEACHER" title="Record Attendance">
+        <div className="flex flex-col items-center justify-center py-20 text-center">
+          <span className="material-symbols-outlined mb-4 text-5xl text-[var(--outline-soft)]">event_available</span>
+          <h2 className="mb-2 text-2xl font-bold">Select a Course</h2>
+          <p className="mb-6 text-[var(--on-surface-variant)]">Please select a course from your courses list to record attendance.</p>
+          <Link to="/teacher/courses" className="ec-primary-btn inline-flex items-center gap-2">
+            View My Courses
+          </Link>
+        </div>
+      </PortalLayout>
+    );
   }
 
   return (

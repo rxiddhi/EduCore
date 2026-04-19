@@ -127,7 +127,9 @@ teacherRouter.post(
         student_id: record.student_id,
         course_id: courseId,
         class_date: payload.class_date,
-        status: record.status
+        session_date: payload.class_date,
+        status: record.status,
+        recorded_by: req.currentUser!.id
       }))
     );
 

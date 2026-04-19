@@ -36,7 +36,15 @@ gradeRouter.post(
       })
       .parse(req.body);
 
-    const saved = await gradeRepo.upsertGrade(payload);
+    const score = payload.grade_points > 0 ? (payload.grade_points / 4) * 100 : 0;
+    
+    const saved = await gradeRepo.upsertGrade({
+      ...payload,
+      score,
+      weighted_score: score,
+      assessment_type: 'FINAL',
+      submitted_by: req.currentUser!.id
+    });
 
     if (!saved) return res.status(400).json({ message: 'Unable to save grade' });
 

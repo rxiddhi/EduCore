@@ -11,7 +11,9 @@ export interface AttendanceRecord {
   student_id: string;
   course_id: string;
   class_date: string;
+  session_date: string;
   status: 'PRESENT' | 'ABSENT';
+  recorded_by: string;
 }
 
 export class AttendanceRepository {
@@ -43,7 +45,9 @@ export class AttendanceRepository {
       student_id: string;
       course_id: string;
       class_date: string;
+      session_date: string;
       status: 'PRESENT' | 'ABSENT';
+      recorded_by: string;
     }>
   ): Promise<number> {
     if (!rows.length) return 0;

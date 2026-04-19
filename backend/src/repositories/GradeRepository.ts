@@ -7,6 +7,10 @@ export interface GradeRecord {
   grade_letter: string;
   grade_points: number;
   credits: number;
+  score: number;
+  weighted_score: number;
+  assessment_type: string;
+  submitted_by: string;
 }
 
 export class GradeRepository {
