@@ -110,6 +110,9 @@ export function LoginPage() {
               <p>
                 <span className="font-semibold text-indigo-900">TEACHER:</span> teacher@educore.demo / Demo@1234
               </p>
+              <p>
+                <span className="font-semibold text-indigo-900">STUDENT:</span> student1@educore.demo / Demo@1234
+              </p>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               <button
@@ -125,6 +128,13 @@ export function LoginPage() {
                 className="rounded-lg border border-indigo-200 bg-white px-3 py-1.5 text-xs font-semibold text-indigo-700 transition-colors hover:bg-indigo-50"
               >
                 Use Teacher
+              </button>
+              <button
+                type="button"
+                onClick={() => setForm({ email: 'student1@educore.demo', password: 'Demo@1234' })}
+                className="rounded-lg border border-indigo-200 bg-white px-3 py-1.5 text-xs font-semibold text-indigo-700 transition-colors hover:bg-indigo-50"
+              >
+                Use Student
               </button>
             </div>
           </div>

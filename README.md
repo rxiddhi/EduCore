@@ -198,9 +198,8 @@ npm --prefix backend run seed:demo
 2) Seed via SQL: before running `backend/supabase/seed.sql`, create these users in Supabase Dashboard → Authentication → Users:
    - `admin@educore.demo`
    - `teacher@educore.demo`
-   - `student1@educore.demo`
-   - `student2@educore.demo`
-   - `student3@educore.demo`
+   - `teacher2@educore.demo`
+   - `student1@educore.demo` through `student7@educore.demo`
 
 ### 4) Start development servers
 
@@ -216,25 +215,22 @@ npm run dev:frontend
 
 Vite proxies `/api` and `/health` to the backend.
 
-## Test Credentials
-
-```text
-test03@gmail.com
-123456
-
-teacher01@gmail.com
-123456
-```
-
 ## Demo Accounts (Seeded)
 
 When seeded, these demo users are available (password: `Demo@1234`):
 
-- `admin@educore.demo`
-- `teacher@educore.demo`
-- `student1@educore.demo`
-- `student2@educore.demo`
-- `student3@educore.demo`
+| Role | Email | Name |
+|------|-------|------|
+| ADMIN | `admin@educore.demo` | Admin Operator |
+| TEACHER | `teacher@educore.demo` | Dr. Elena Thorne |
+| TEACHER | `teacher2@educore.demo` | Prof. Arjun Mehta |
+| STUDENT | `student1@educore.demo` | Aarav Sharma |
+| STUDENT | `student2@educore.demo` | Maya Patel |
+| STUDENT | `student3@educore.demo` | Riya Mehta |
+| STUDENT | `student4@educore.demo` | Karan Gupta |
+| STUDENT | `student5@educore.demo` | Ananya Iyer |
+| STUDENT | `student6@educore.demo` | Rohan Desai |
+| STUDENT | `student7@educore.demo` | Priya Nair |
 
 ## Documentation
 
