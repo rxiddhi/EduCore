@@ -1,4 +1,4 @@
-import type { BaseUser } from '../domain/User.js';
+import type { BaseUser, UserRole } from '../domain/User.js';
 
 declare global {
   namespace Express {
@@ -7,7 +7,7 @@ declare global {
       rawAuthUser?: {
         id: string;
         email?: string;
-        role?: string;
+        role: UserRole;
       };
     }
   }

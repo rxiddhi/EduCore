@@ -1,6 +1,7 @@
 {
   "name": "stitch-educore-react-portal",
   "private": true,
+  "type": "module",
   "workspaces": [
     "frontend",
     "backend"
